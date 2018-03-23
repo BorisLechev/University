@@ -1,2 +1,2 @@
 # University
-Contains tasks from university.
+Problems from university.
