@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{37D92B49-10AE-4ABC-8394-B59D746DB315}</ProjectGuid>
+    <ProjectGuid>{54D53A8E-34BD-46EC-9305-75F388BF1133}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CourseworkThree</RootNamespace>
+    <RootNamespace>CourseworkTwo11</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,7 +151,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CourseworkThree.cpp" />
+    <ClCompile Include="CourseworkTwo1.1.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
