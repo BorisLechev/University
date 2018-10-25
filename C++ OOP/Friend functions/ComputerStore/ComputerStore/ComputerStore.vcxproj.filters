@@ -18,7 +18,10 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Person1.h">
+    <ClInclude Include="Computer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Laptop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,10 +29,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercise.cpp">
+    <ClCompile Include="ComputerStore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Person1.cpp">
+    <ClCompile Include="Computer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Laptop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

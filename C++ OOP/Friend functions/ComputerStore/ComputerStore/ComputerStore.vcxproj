@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{5B14B50A-95CF-4C9F-89F4-17CC1FD4D6E5}</ProjectGuid>
+    <ProjectGuid>{2D55B53E-6A7A-47F8-85B1-066A3990C7BD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Exercise</RootNamespace>
+    <RootNamespace>ComputerStore</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,18 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Computer.h" />
+    <ClInclude Include="Laptop.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Person1.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Exercise.cpp" />
+    <ClCompile Include="Computer.cpp" />
+    <ClCompile Include="ComputerStore.cpp" />
+    <ClCompile Include="Laptop.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Person1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
