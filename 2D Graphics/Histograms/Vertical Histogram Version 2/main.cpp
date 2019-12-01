@@ -43,6 +43,7 @@ int main()
 	
 	for (int i = 1; i <= columnsCount; i++)
 	{
+		// double labelX = startPointX + i * (columnWidth + distanceBetweenColumns) - columnWidth (po-lesen variant - moi)
 		double labelX = startPointX + (i - 1) * (columnWidth + distanceBetweenColumns) + columnWidth;
 		outtextxy(labelX, startPointY + 10, itoa(points[i - 1], text, 10));
 		
