@@ -6,80 +6,92 @@ using namespace std;
 
 int main()
 {
-    double xArray[7] = {1, 5, 8, 9, 15, 60, 80};
+	double xArray[7] = {1, 5, 8, 9, 15, 60, 80};
     double yArray[7]= {4, 8, 120, 5, 6, 100, 200};
 
     initwindow(800, 800);
     
     // nachalo na prozoreca (po uslovie)
-    double x0 = 100;
-    double y0 = 500;
+    double startPointX = 100;
+    double startPointY = 500;
     
     // golemina na prozoreca (po uslovie)
-    double px = 500;
-    double py = 400;
+    double windowSizeX = 500;
+    double windowSizeY = 400;
     
     // shirina na deleniata varhu osite (po uslovie)
-    double dx = 50;
-    double dy = 80;
+    double delimiterWidthX = 50;
+    double delimiterWidthY = 80;
 	
-    // sortirovka
-    double xMin = xArray[0];
-    double yMin = yArray[0];
-    
-    double xMax = xArray[6];
-    double yMax = yArray[6];
+    double xMax = x[0];
+	double xMin = x[0];
+	
+	double yMax = y[0];
+	double yMin = y[0];
+	
+	for(int i = 0; i < 7; i++)
+	{
+		if(xMax < x[i])
+		{
+			xMax = x[i];
+		}
+		
+		if(xMin > x[i])
+		{
+			xMin = x[i];
+		}
+		
+		if(yMax < y[i])
+		{
+			yMax = y[i];
+		}
+		
+		if(yMin > y[i])
+		{
+			yMin = y[i];
+		}
+	}
     
     // opredelane na mashtabnite elementi
-    double sx = (xMax - xMin) / px;
-    double sy = (yMax - yMin) / py;
-    
-    // linii za koordinatna sistema
-    moveto(x0, y0); // da izpravi x os
-    lineto(x0 + px, y0); // x e gore y e vlavo (vazi dokato nama moveto() predi lineto()) lineto chertae linia do tochkata
-    moveto(x0, y0); // da izpravi y os
-    lineto(x0, y0 - py);
-    
-    // namirane na koordinatite na pikselite i gi chertae
-    for(int i = 0; i < 7; i++) 
-	{
-    	double xiPixel = x0 + (xArray[i] - xMin) / sx; // prevrashtame v pikseli i pribavame x0 (nachaloto)
-    	double yiPixel = y0 - (yArray[i] - yMin) / sy;
-    	
-    	circle(xiPixel, yiPixel, 2); // 2 e radius na circle-a na tochkata
-    	lineto(xiPixel, yiPixel); // svarzva tochkite
-	}
+    double scaleFactorX = (xMax - xMin) / windowSizeX;
+	double scaleFactorY = (yMax - yMin) / windowSizeY;
 	
 	// broi delenia
-	double xPartitionsCount = px / dx; // dalginata na X os / shirinata na deleniata
-	double yPartitionsCount = py/ dy;
+	double xPartitionsCount = windowSizeX / delimiterWidthX; // dalginata na X os / shirinata na deleniata
+	double yPartitionsCount = windowSizeY/ delimiterWidthY;
 	char text[10];
+	
+	// linii za koordinatna sistema
+    moveto(startPointX, startPointY); // da izpravi x os
+    lineto(startPointX + windowSizeX, startPointY); // x e gore y e vlavo (vazi dokato nama moveto() predi lineto()) lineto chertae linia do tochkata
+    moveto(startPointX, startPointY); // da izpravi y os
+    lineto(startPointX, startPointY - windowSizeY);
 	
 	// cikal za X os i postavaneto na stoinostite i chertite na deleniata
 	for(int i = 0; i < xPartitionsCount; i++)
 	{
-		gcvt(xMin + i * dx * sx, 5.2, text);
-		outtextxy(x0 + i * dx, y0 + 10, text);
-		line(x0 + i * dx, y0 , x0 + i * dx, y0 + 3);
+		gcvt(xMin + i * delimiterWidthX * scaleFactorX, 5.2, text);
+		outtextxy(startPointX + i * delimiterWidthX, startPointY + 10, text);
+		line(startPointX + i * delimiterWidthX, startPointY , startPointX + i * delimiterWidthX, startPointY + 3);
 	}
 	
 	// cikal za Y os i postavaneto na stoinostite i chertite na deleniata
 	for(int i = 0; i < yPartitionsCount; i++)
 	{
-		gcvt(yMin + i * dy * sy, 5.2, text);
-        outtextxy(x0 - 50, y0 - i * dy, text);
-        line(x0, y0 - i * dy , x0 -3, y0 - i * dy);
+		gcvt(yMin + i * delimiterWidthY * scaleFactorY, 5.2, text);
+        outtextxy(startPointX - 50, startPointY - i * delimiterWidthY, text);
+        line(startPointX, startPointY - i * delimiterWidthY , startPointX -3, startPointY - i * delimiterWidthY);
 	}
-    
-    //    int arr[] = {1, 5, 8, 9, 6, 7, 3, 4, 2, 0, 10, -1}; 
-	//    int n = sizeof(arr)/sizeof(arr[0]); 
-	//    int test[n] = {};
-	//    sort(arr, arr+n); 
-	//    cout << "\nArray after sorting using default sort is : \n"; 
-	//	for (int i = 0; i < n; ++i) {
-	//    	test[i] = arr[i];
-	//        cout << test[i] << " ";
-	//	}
+	
+	// namirane na koordinatite na pikselite i gi chertae
+    for(int i = 0; i < 7; i++) 
+	{
+    	double xiPixel = startPointX + (xArray[i] - xMin) / scaleFactorX; // prevrashtame v pikseli i pribavame startPointX (nachaloto)
+    	double yiPixel = startPointY - (yArray[i] - yMin) / scaleFactorY;
+    	
+    	circle(xiPixel, yiPixel, 2); // 2 e radius na circle-a na tochkata
+    	lineto(xiPixel, yiPixel); // svarzva tochkite
+	}
 
     getch();
     return 0;
