@@ -5,20 +5,20 @@ using namespace std;
 
 int main()
 {
-		// n (po uslovie)
+	// n (po uslovie)
 	const int firstDivisionsCount = 80;
 	const int secondDivisionsCount = 100;
 	
-	double firstXArray[firstDivisionsCount];
-	double firstYArray[firstDivisionsCount];
+	double xArray[firstDivisionsCount];
+	double yArray[firstDivisionsCount];
 	
 	// nachalo na prozoreca (po uslovie)
-	int x0 = 100;
-	int y0 = 600;
+	int startPointX = 100;
+	int startPointY = 600;
 	
 	// golemina na prozoreca (po uslovie)
-	int px = 600;
-	int py = 500;
+	int windowSizeX = 600;
+	int windowSizeY = 500;
 	
 	 // shirina na deleniata varhu osite (po uslovie)
 	int dx = 60;
@@ -36,69 +36,69 @@ int main()
 	
 	for(double i = xMin; i <= xMax; i += step)
 	{
-		double xFromGraphic = i;
+		double xi = i;
 		
-		firstXArray[index] = xFromGraphic;
-		firstYArray[index] = (xFromGraphic * xFromGraphic) - (3 * xFromGraphic) + 10; // uravnenie po uslovie -> yi
+		xArray[index] = xi;
+		yArray[index] = (xi * xi) - (3 * xi) + 10; // uravnenie po uslovie -> yi
 		
 		index++;
 	}
 	
-	double firstYMin = firstYArray[0];
-	double firstYMax = firstYArray[0];
+	double yMin = yArray[0];
+	double yMax = yArray[0];
 	
 	for(int i = 0; i < firstDivisionsCount; i++)
 	{
-		if(firstYMin > firstYArray[i])
+		if(yMin > yArray[i])
 		{
-			firstYMin = firstYArray[i];
+			yMin = yArray[i];
 		}
 		
-		if(firstYMax < firstYArray[i])
+		if(yMax < yArray[i])
 		{
-			firstYMax = firstYArray[i];
+			yMax = yArray[i];
 		}
 	}
 	
 	// opredelane na mashtabnite elementi
-    double sx = (xMax - xMin) / px;
-    double sy = (firstYMax - firstYMin) / py;
+    double scaleFactorX = (xMax - xMin) / windowSizeX;
+    double scaleFactorY = (yMax - yMin) / windowSizeY;
     
     // linii za koordinatna sistema
-    moveto(x0, y0); // da izpravi x os
-    lineto(x0 + px, y0); // x e gore y e vlavo (vazi dokato nama moveto() predi lineto()) lineto chertae linia do tochkata
-    moveto(x0, y0); // da izpravi y os
-    lineto(x0, y0 - py);
+    moveto(startPointX, startPointY); // da izpravi x os
+    lineto(startPointX + windowSizeX, startPointY); // x e gore y e vlavo (vazi dokato nama moveto() predi lineto()) lineto chertae linia do tochkata
+    moveto(startPointX, startPointY); // da izpravi y os
+    lineto(startPointX, startPointY - windowSizeY);
     
     // namirane na koordinatite na pikselite i gi chertae
     for(int i = 0; i < firstDivisionsCount; i++) 
 	{
-    	double xiPixel = x0 + (firstXArray[i] - xMin) / sx; // prevrashtame v pikseli i pribavame x0 (nachaloto)
-    	double yiPixel = y0 - (firstYArray[i] - firstYMin) / sy;
+    	double xiPixel = startPointX + (xArray[i] - xMin) / scaleFactorX; // prevrashtame v pikseli i pribavame startPointX (nachaloto)
+    	double yiPixel = startPointY - (yArray[i] - yMin) / scaleFactorY;
     	
     	circle(xiPixel, yiPixel, 2); // 2 e radius na circle-a na tochkata
     	//lineto(xiPixel, yiPixel); // svarzva tochkite
 	}
 	
 	// broi delenia
-	double xPartitionsCount = px / dx; // dalginata na X os / shirinata na deleniata
-	double yPartitionsCount = py/ dy;
+	double xPartitionsCount = windowSizeX / dx; // dalginata na X os / shirinata na deleniata
+	double yPartitionsCount = windowSizeY/ dy;
 	char text[10];
 	
 	// cikal za X os i postavaneto na stoinostite i chertite na deleniata
 	for(int i = 0; i < xPartitionsCount; i++)
 	{
-		gcvt(xMin + i * dx * sx, 5.2, text);
-		outtextxy(x0 + i * dx, y0 + 10, text);
-		line(x0 + i * dx, y0 , x0 + i * dx, y0 + 3);
+		gcvt(xMin + i * dx * scaleFactorX, 5.2, text);
+		outtextxy(startPointX + i * dx, startPointY + 10, text);
+		line(startPointX + i * dx, startPointY, startPointX + i * dx, startPointY + 3);
 	}
 	
 	// cikal za Y os i postavaneto na stoinostite i chertite na deleniata
 	for(int i = 0; i < yPartitionsCount; i++)
 	{
-		gcvt(firstYMin + i * dy * sy, 5.2, text);
-        outtextxy(x0 - 50, y0 - i * dy, text);
-        line(x0, y0 - i * dy , x0 -3, y0 - i * dy);
+		gcvt(yMin + i * dy * scaleFactorY, 5.2, text);
+        outtextxy(startPointX - 50, startPointY - i * dy, text);
+        line(startPointX, startPointY - i * dy , startPointX - 3, startPointY - i * dy);
 	}
 
     getch();
