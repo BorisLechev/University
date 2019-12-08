@@ -56,9 +56,7 @@ int main()
 	
 	for(int i = 1; i <= columnsCount; i++)
 	{
-        bar(x0 + i * (ds + dc) - dc, delimiter  - incomes[i - 1] / s, x0 + i * (ds + dc), delimiter);
-
-        bar(x0 + i * (ds + dc) - dc, delimiter  + expenses[i - 1] / s, x0 + i * (ds + dc), delimiter);
+        bar(x0 + i * (ds + dc) - dc, delimiter  - incomes[i - 1] / s, x0 + i * (ds + dc), delimiter + expenses[i - 1] / s);
 	}
     
   	char text[10];
@@ -84,7 +82,6 @@ int main()
      lineto(x0 + px, y0);
      moveto(x0, y0);
      lineto(x0, y0 - py);
-
 
     getch();
 }

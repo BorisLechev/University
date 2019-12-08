@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-   const int columnsCount = 5;
+    const int columnsCount = 5;
     
 	double startPointX = 100;
 	double startPointY = 600;
@@ -45,8 +45,7 @@ int main()
 	
 	for (int i = 1; i< columnsCount; i++)
 	{
-		bar(delimiter, startPointY - i * (distanceBetweenColumns + columnWidth), delimiter - (incomes[i - 1] / scaleFactor), startPointY - i * (distanceBetweenColumns + columnWidth) + columnWidth);
-		bar(delimiter, startPointY - i * (distanceBetweenColumns + columnWidth), delimiter + (expenses[i - 1] / scaleFactor), startPointY - i * (distanceBetweenColumns + columnWidth) + columnWidth);
+		bar(delimiter - (expenses[i - 1] / scaleFactor), startPointY - i * (distanceBetweenColumns + columnWidth), delimiter + (incomes[i - 1] / scaleFactor), startPointY - i * (distanceBetweenColumns + columnWidth) + columnWidth);
 	}
 	
 	char text[10];
