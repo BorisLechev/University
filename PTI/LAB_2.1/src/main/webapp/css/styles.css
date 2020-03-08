@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(204, 204, 204);
+}
+
+.site-header {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(1, 46, 94);
+}
+
+.main {
+    display: flex;
+    flex: 0 0 70%;
+    max-width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.picture-container {
+    flex: 0 0 40%;
+    max-width: 60%;
+}
+
+.picture-container img {
+    width: 80%;
+    height: auto;
+    background-color: rgb(255, 182, 6);
+}
+
+.info-container {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.info-container p,
+.info-container header {
+    padding: 0.5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.umenia-container {
+    display: flex;
+    flex: 0 0 70%;
+    max-width: 70%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 4rem auto;
+    padding: 40px 50px 20px 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.profesionalni,
+.lichnostni {
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+
+.profesionalni header,
+.lichnostni header {
+    text-align: center;
+}
+
+.diagram1,
+.diagram2 {
+    display: inline-block;
+}
+
+.diagram1 {
+    height: 3px;
+    width: 30%;
+    background-color: rgb(1, 46, 94);
+}
+
+.diagram2 {
+    height: 3px;
+    width: 30%;
+    background-color: rgb(255, 182, 6);
+}
+
+.profesionalni {
+    margin-right: 2rem;
+}
+
+.name {
+    margin: 0.5rem 0;
+}
+
+.email,
+.phone,
+.town,
+.street {
+    color: rgb(255, 182, 6);
+}
+
+footer {
+    margin-top: 1rem;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(1, 46, 94);
+}
