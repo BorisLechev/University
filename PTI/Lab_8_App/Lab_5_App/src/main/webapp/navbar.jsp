@@ -25,17 +25,22 @@
                 </li>
                 <%  if (session.getAttribute("user") == null) {   %>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.jsp">Login</a>
+                        <a class="nav-link" href="login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./register.jsp">Register</a>
+                        <a class="nav-link" href="register">Register</a>
                     </li>
-                <%     } else {
-                %>
+                <% } else { %>
                     <li class="nav-item">
                         <a class="nav-link" href="logout">Logout</a>
                     </li>
-                <%     } %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userslisting">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/edit/<%=session.getAttribute("user_id")%>">Edit My Data</a>
+                    </li>
+                <% } %>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

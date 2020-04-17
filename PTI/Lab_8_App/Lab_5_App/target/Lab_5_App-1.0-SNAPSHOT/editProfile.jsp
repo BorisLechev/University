@@ -48,8 +48,8 @@
         <section>
             <button name="submit" type="submit" id="contact-submit">Submit</button>
         </section>
-        <input type="hidden" name="id" value="<%=id%>">
-        <a href="./views/profilePage/profilePage.jsp"><b> To Profile page</b></a>
+        <input type="hidden" name="id" value = "<%=id%>">
+        <a href="/profile/<%=id%>"><b> To Profile page</b></a>
     </form>
 </div>
 </body>

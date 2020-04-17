@@ -66,6 +66,7 @@ public class Login extends HttpServlet {
                 if(user.getUsername().equals(username) &&  user.getPassword().equals(password) ) {
                     HttpSession session = request.getSession();
                     session.setAttribute("user", user);
+                    session.setAttribute("user_id", Integer.toString(user.getId()));
 
                     User userFromSession = (User)session.getAttribute("user");
 
