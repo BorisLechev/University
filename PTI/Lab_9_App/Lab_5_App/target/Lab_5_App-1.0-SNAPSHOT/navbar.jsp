@@ -25,17 +25,17 @@
                 </li>
                 <%  if (session.getAttribute("user") == null) {   %>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register">Register</a>
+                        <a class="nav-link" href="/register">Register</a>
                     </li>
                 <% } else { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userslisting">Users</a>
+                        <a class="nav-link" href="/userslisting">Users</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/edit/<%=session.getAttribute("user_id")%>">Edit My Data</a>

@@ -58,10 +58,10 @@
             <% if(!cookieSet) { %>
                 Welcome!
                 <br>
-                <a href="dailyMessage">Stop Welcoming me</a>
+                <a href="/dailyMessage">Stop Welcoming me</a>
             <% } %>
 
-            <a href="edit/<%=id%>">Edit</a>
+            <a href="/edit/<%=id%>">Edit</a>
         </section>
     </main>
     <section class="umenia-container">

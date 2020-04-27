@@ -38,7 +38,7 @@ public class UserProfile extends HttpServlet {
                 request.setAttribute("id", user.getId());
 
                 request
-                    .getRequestDispatcher("views/profilePage/profilePage.jsp")
+                    .getRequestDispatcher("/views/profilePage/profilePage.jsp")
                     .forward(request, response);
             }
         }

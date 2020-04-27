@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="classes.User" %><%--
   Created by IntelliJ IDEA.
   User: Boris
   Date: 16.4.2020 г.
@@ -27,12 +28,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${users}" var="user">
-                        <tr>
-                            <td>${user.getName()}</td>
-                            <td>${user.getUsername()}</td>
-                            <td><a href="profile/${user.getId()}">Check Profile</a></td>
-                        </tr>
+                        <c:forEach items="${users.value}" var="user">
+                            <tr>
+                                <td>${user.getName()}</td>
+                                <td>${user.getUsername()}</td>
+                                <td><a href="profile/${user.getId()}">Check Profile</a></td>
+                            </tr>
                         </c:forEach>
                     </tbody>
                 </table>

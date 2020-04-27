@@ -51,14 +51,18 @@ public class EditProfile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         for (User user: Register.users) {
-            String id = request.getRequestURL().toString().split("/")[5];
+            String id = request.getRequestURL().toString().split("/")[4];
 
             if (id.equals(Integer.toString(user.getId()))) {
-                user.setUsername(request.getParameter("username").toString());
-                user.setName(request.getParameter("name").toString());
-                user.setPassword(request.getParameter("password").toString());
-                user.setAge(request.getParameter("age").toString());
-                user.setEmail(request.getParameter("email").toString());
+                if (request.getParameter("username") != null) {
+                    user.setUsername(request.getParameter("username").toString());
+                    user.setName(request.getParameter("name").toString());
+                    user.setPassword(request.getParameter("password").toString());
+                }
+                else {
+                    user.setAge(request.getParameter("age").toString());
+                    user.setEmail(request.getParameter("email").toString());
+                }
 
                 request.setAttribute("username", user.getUsername());
                 request.setAttribute("name", user.getName());

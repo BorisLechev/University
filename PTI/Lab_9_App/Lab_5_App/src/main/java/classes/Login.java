@@ -77,9 +77,7 @@ public class Login extends HttpServlet {
                     request.setAttribute("email", userFromSession.getEmail());
                     request.setAttribute("id", userFromSession.getId());
 
-    //                    response.sendRedirect("views/profilePage/profilePage.jsp");
-                    RequestDispatcher profile = request.getRequestDispatcher("views/profilePage/profilePage.jsp");
-                    profile.forward(request, response);
+                    response.sendRedirect("edit/" + userFromSession.getId());
                     return;
                 }
             }
