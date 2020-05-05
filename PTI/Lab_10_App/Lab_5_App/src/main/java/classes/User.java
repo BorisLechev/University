@@ -1,5 +1,8 @@
 package classes;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "Users")
 public class User implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 

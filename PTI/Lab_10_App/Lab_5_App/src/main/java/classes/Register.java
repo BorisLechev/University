@@ -1,5 +1,11 @@
 package classes;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -10,6 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 @WebServlet(urlPatterns = "/register")
 public class Register extends HttpServlet {
@@ -20,6 +32,37 @@ public class Register extends HttpServlet {
     public void init() throws ServletException
     {
         users = new ArrayList<User>();
+        try
+        {
+            String currentDirectory = this.getClass().getClassLoader().getResource("").getPath();
+            //creating a constructor of file class and parsing an XML file
+            File file = new File(currentDirectory + "/data.xml");
+            //an instance of factory that gives a document builder
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            //an instance of builder to parse the specified xml file
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(file);
+            doc.getDocumentElement().normalize();
+            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
+            NodeList nodeList = doc.getElementsByTagName("user");
+            // nodeList is not iterable, so we are using for loop
+            for (int itr = 0; itr < nodeList.getLength(); itr++)
+            {
+                Node node = nodeList.item(itr);
+                System.out.println("\nNode Name :" + node.getNodeName());
+                if (node.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    Element eElement = (Element) node;
+                    User user = new User(eElement.getElementsByTagName("username").item(0).getTextContent(),
+                    eElement.getElementsByTagName("password").item(0).getTextContent(),  eElement.getElementsByTagName("password").item(0).getTextContent(), itr );
+                    Register.users.add(user);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -77,11 +120,47 @@ public class Register extends HttpServlet {
 
             users.add(new User(firstName, username, password, this.users.size() + 1));
 
-            request.setAttribute("name", firstName);
-            request.setAttribute("username", username);
-            request.setAttribute("password", password);
-
+            try
+            {
+                String currentDirectory = this.getClass().getClassLoader().getResource("").getPath();
+                //creating a constructor of file class and parsing an XML file
+                File file = new File(currentDirectory + "/data.xml");
+                //an instance of factory that gives a document builder
+                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+                //an instance of builder to parse the specified xml file
+                DocumentBuilder db = dbf.newDocumentBuilder();
+                Document doc = db.parse(file);
+                Element dataTag = doc.getDocumentElement();
+                Element listTag = (Element) dataTag.getElementsByTagName("list").item(0);
+                Element user = doc.createElement("user");
+                Element nameElem = doc.createElement("name");
+                Element usernameElem = doc.createElement("username");
+                Element passwordElem = doc.createElement("password");
+                nameElem.setTextContent(firstName);
+                usernameElem.setTextContent(username);
+                passwordElem.setTextContent(password);
+                user.appendChild(nameElem);
+                user.appendChild(usernameElem);
+                user.appendChild(passwordElem);
+                listTag.appendChild(user);
+                // output DOM XML to console
+                // write the content into xml file
+                TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                Transformer transformer = transformerFactory.newTransformer();
+                DOMSource source = new DOMSource(doc);
+                StreamResult result = new StreamResult(new File(currentDirectory + "/data.xml"));
+                transformer.transform(source, result);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
             response.sendRedirect("./login.jsp");
         }
+
+//            request.setAttribute("name", firstName);
+//            request.setAttribute("username", username);
+//            request.setAttribute("password", password);
+//            response.sendRedirect("./login.jsp");
     }
 }

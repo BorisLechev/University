@@ -28,7 +28,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${users.value}" var="user">
+                        <c:forEach items="${users}" var="user">
                             <tr>
                                 <td>${user.getName()}</td>
                                 <td>${user.getUsername()}</td>

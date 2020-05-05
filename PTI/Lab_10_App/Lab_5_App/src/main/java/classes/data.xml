@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+	<list>
+		<user>
+			<name>a</name>
+			<username>aa</username>
+			<password>aa</password>
+		</user>
+		
+		<user>
+			<name>b</name>
+			<username>bb</username>
+			<password>bb</password>
+		</user>
+		<user>
+			<name>c</name>
+			<username>cc</username>
+			<password>cc</password>
+		</user>
+	</list>
+</data>
