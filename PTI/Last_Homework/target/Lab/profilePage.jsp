@@ -1,4 +1,4 @@
-<%--
+<%@ page import="models.User" %><%--
   Created by IntelliJ IDEA.
   User: Boris
   Date: 20.5.2020 г.
@@ -7,10 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% String fullName = request.getAttribute("fullName").toString(); %>
-<% String password = request.getAttribute("password").toString(); %>
 <% Integer age = Integer.parseInt(request.getAttribute("age").toString()); %>
 <% String email = request.getAttribute("email").toString(); %>
-<% String id = request.getAttribute("id").toString(); %>
+<% int id = Integer.parseInt(request.getAttribute("id").toString()); %>
+
+<%
+    HttpSession s = request.getSession();
+    User user = (User)s.getAttribute("user");
+%>
 
 <%--<jsp:useBean id = 'students' class = 'models.User'>--%>
 <%--    <jsp:setProperty name = "students" property = "fullName" value="<%=fullName%>"/>--%>
@@ -53,18 +57,17 @@
             %>
 
             <% if(!cookieSet) { %>
-            Welcome!
-            <br>
-            <a href="/dailyMessage">Stop Welcoming me</a>
+                Welcome!
+                <br>
+                <a href="/dailyMessage">Stop Welcoming me</a>
             <% } %>
 
-            <a href="/edit/<%=id%>">Edit</a>
+            <% if (user.getId() == id) { %>
+                <a href="/edit/<%=id%>">Edit</a>
+            <% } %>
         </section>
     </main>
     <section class="umenia-container">
-        <!-- <header>
-            <h3>Умения</h3>
-        </header> -->
         <article class="profesionalni">
             <header>
                 <h3>Професионални</h3>

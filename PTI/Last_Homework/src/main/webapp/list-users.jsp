@@ -29,13 +29,6 @@
                 </tr>
                 </thead>
                 <tbody>
-<%--                <c:forEach items="${users}" var="user">--%>
-<%--                    <tr>--%>
-<%--                        <td>${user.getName()}</td>--%>
-<%--                        <td>${user.getUsername()}</td>--%>
-<%--                        <td><a href="profile/${user.getId()}">Check Profile</a></td>--%>
-<%--                    </tr>--%>
-<%--                </c:forEach>--%>
                 <% for (User user : users.getUsers()) { %>
                     <tr>
                         <td><%= user.getFullName() %></td>

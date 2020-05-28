@@ -24,8 +24,13 @@ public class UserProfile extends HttpServlet {
         HttpSession session = req.getSession();
 
         if (session.getAttribute("user") == null) {
-            RequestDispatcher bb = req.getRequestDispatcher("login.jsp");
-            bb.forward(req, resp);
+            resp.sendRedirect("/login.jsp");
+            return;
+        }
+
+        int userId = Integer.parseInt(session.getAttribute("user_id").toString());
+        if (userId != id) {
+            resp.sendRedirect("/login.jsp");
             return;
         }
 
@@ -38,9 +43,6 @@ public class UserProfile extends HttpServlet {
             req.setAttribute("age", user.getAge());
             req.setAttribute("password", user.getPassword());
 
-//            req
-//                .getRequestDispatcher("/profilePage.jsp")
-//                .forward(req, resp);
             RequestDispatcher bb = req.getRequestDispatcher("/profilePage.jsp");
             bb.forward(req, resp);
             return;

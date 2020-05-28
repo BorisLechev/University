@@ -9,11 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = { "/profile/*", "/edit/*" })
+@WebFilter(urlPatterns = { "/edit/*" })
 public class AccessFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
     }
 
     @Override
@@ -23,7 +22,6 @@ public class AccessFilter implements Filter {
 
         String url = request.getRequestURL().toString();
         int id = Integer.parseInt(url.split("/")[4]);
-//        User user = this.repository.getUserById(id);
 
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
@@ -38,6 +36,5 @@ public class AccessFilter implements Filter {
 
     @Override
     public void destroy() {
-
     }
 }

@@ -16,17 +16,12 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     public UserRepository repository = UserRepository.getInstance();
 
-//    public void init() throws ServletException {
-//        this.repository = new UserRepository();
-//    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         HttpSession session = request.getSession();
 
         if(session.getAttribute("user") == null) {
-            RequestDispatcher bb = request.getRequestDispatcher("login.jsp");
-            bb.forward(request, response);
+            response.sendRedirect("login.jsp");
         }
         else {
             User userFromSession = (User)session.getAttribute("user");
@@ -38,10 +33,9 @@ public class Login extends HttpServlet {
             request.setAttribute("email", userFromSession.getEmail());
             request.setAttribute("id", userFromSession.getId());
 
-            RequestDispatcher profile = request.getRequestDispatcher("views/profilePage/profilePage.jsp");
+            RequestDispatcher profile = request.getRequestDispatcher("profilePage.jsp");
             profile.forward(request, response);
         }
-//        response.sendRedirect("./login.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -63,8 +57,7 @@ public class Login extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", this.repository.getUserById(id));
                 session.setAttribute("user_id", Integer.toString(id));
-//                RequestDispatcher req = request.getRequestDispatcher("views/register/errors/usernameExists.jsp");
-//                req.forward(request, response);
+
                 response.sendRedirect("edit/" + id);
                 return;
             }

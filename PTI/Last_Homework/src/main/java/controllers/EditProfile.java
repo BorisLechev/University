@@ -24,8 +24,13 @@ public class EditProfile extends HttpServlet {
         HttpSession session = req.getSession();
 
         if (session.getAttribute("user") == null) {
-            RequestDispatcher bb = req.getRequestDispatcher("login.jsp");
-            bb.forward(req, resp);
+            resp.sendRedirect("/login.jsp");
+            return;
+        }
+
+        int userId = Integer.parseInt(session.getAttribute("user_id").toString());
+        if (userId != id) {
+            resp.sendRedirect("/login.jsp");
             return;
         }
 

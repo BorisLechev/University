@@ -3,24 +3,38 @@ package controllers;
 import models.User;
 import models.UserRepository;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/register")
 public class Register extends HttpServlet {
     public UserRepository repository = UserRepository.getInstance();
 
-//    public void init() throws ServletException {
-//        this.repository = new UserRepository();
-//    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("register.jsp");
+        HttpSession session = request.getSession();
+
+        if(session.getAttribute("user") == null) {
+            response.sendRedirect("register.jsp");
+        } else {
+            User userFromSession = (User)session.getAttribute("user");
+
+            request.setAttribute("email", userFromSession.getEmail());
+            request.setAttribute("fullName", userFromSession.getFullName());
+            request.setAttribute("password", userFromSession.getPassword());
+            request.setAttribute("age", userFromSession.getAge());
+            request.setAttribute("email", userFromSession.getEmail());
+            request.setAttribute("id", userFromSession.getId());
+
+            RequestDispatcher profile = request.getRequestDispatcher("profilePage.jsp");
+            profile.forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -31,8 +45,6 @@ public class Register extends HttpServlet {
         String confirmPassword = request.getParameter("confirmPassword");
 
         if (fullName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-//            RequestDispatcher req = request.getRequestDispatcher("views/register/errors/invalidCredentials.jsp");
-//            req.include(request, response);
             response.sendRedirect("errors/invalidCredentials.jsp");
             return;
         }
