@@ -1,5 +1,11 @@
 package models;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "user")
+@XmlAccessorType(XmlAccessType.FIELD) // da dostapvam samo fields na klasa
 public class User {
     private int id;
 
@@ -10,6 +16,9 @@ public class User {
     private Integer age = 0;
 
     private String password = null;
+
+    public User() { // zaradi xml
+    }
 
     public User(String fullName, String email, String password, int id) {
         this.id = id;

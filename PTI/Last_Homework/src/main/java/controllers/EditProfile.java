@@ -64,6 +64,8 @@ public class EditProfile extends HttpServlet {
                 user.setEmail(req.getParameter("email"));
             }
 
+            this.repository.updateXMLFile();
+
             req.setAttribute("id", user.getId());
             req.setAttribute("fullName", user.getFullName());
             req.setAttribute("email", user.getEmail());

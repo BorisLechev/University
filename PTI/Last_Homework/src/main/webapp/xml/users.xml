@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<users>
+    <user>
+        <id>4</id>
+        <fullName>Pesho Peshev</fullName>
+        <email>pesho@abv.bg</email>
+        <age>89</age>
+        <password>123</password>
+    </user>
+    <user>
+        <id>3</id>
+        <fullName>Boris Lechev</fullName>
+        <email>b.lechev@abv.bg</email>
+        <age>69</age>
+        <password>123</password>
+    </user>
+    <user>
+        <id>1</id>
+        <fullName>Kiro Kirov</fullName>
+        <email>kiro@abv.bg</email>
+        <age>100</age>
+        <password>123</password>
+    </user>
+    <user>
+        <id>2</id>
+        <fullName>Shishi Peevski</fullName>
+        <email>shishi@abv.bg</email>
+        <age>36</age>
+        <password>123</password>
+    </user>
+</users>

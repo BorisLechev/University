@@ -35,7 +35,7 @@
             <input id="password" name="password" value = "<%=password%>" type="password" required>
         </section>
         <section>
-            <button name="submit" type="submit">Submit</button>
+            <button id="submit1" name="submit" type="submit">Submit</button>
         </section>
         <input type="hidden" name="id" value = "<%=id%>">
     </form>
