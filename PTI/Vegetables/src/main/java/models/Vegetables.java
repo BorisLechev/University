@@ -1,22 +1,19 @@
 package models;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashSet;
 
-public class VegetablesRepository {
-    private static VegetablesRepository repository;
-
+@XmlRootElement(name = "vegetables")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Vegetables {
+    @XmlElement(name = "vegetable")
     private HashSet<Vegetable> vegetables;
 
-    public VegetablesRepository() {
+    public Vegetables() {
         this.vegetables = new HashSet<Vegetable>();
-    }
-
-    public static VegetablesRepository getInstance() {
-        if (repository == null) {
-            repository = new VegetablesRepository();
-        }
-
-        return repository;
     }
 
     public HashSet<Vegetable> getVegetables() {

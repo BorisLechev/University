@@ -7,15 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="models.Vegetable" %>
-<jsp:useBean id="vegetables" type="models.VegetablesRepository" scope="request"></jsp:useBean>
+<jsp:useBean id="vegetables" type="models.Vegetables" scope="request"></jsp:useBean>
 <html>
 <head>
-    <title>models.VegetablesRepository list</title>
+    <title>models.Vegetables list</title>
     <script type="text/javascript" src="js/site.js"></script>
 </head>
 <body>
     <header>
-        <h1>models.VegetablesRepository list</h1>
+        <h1>models.Vegetables list</h1>
     </header>
     <main>
         <table>

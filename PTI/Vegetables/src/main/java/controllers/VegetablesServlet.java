@@ -2,7 +2,7 @@ package controllers;
 
 import com.google.gson.Gson;
 import models.Vegetable;
-import models.VegetablesRepository;
+import models.Vegetables;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,19 +16,21 @@ import java.util.HashSet;
 
 @WebServlet(urlPatterns = "/vegetables")
 public class VegetablesServlet extends HttpServlet {
-    private VegetablesRepository repository = VegetablesRepository.getInstance();
+    private Vegetables repository;
 
     private Gson gson = new Gson();
 
     @Override
     public void init() throws ServletException {
         HashSet<Vegetable> vegetables = new HashSet<Vegetable>();
-
         vegetables.add(new Vegetable("Vegetable 1", 100, 1.0));
         vegetables.add(new Vegetable("Vegetable 2", 100, 2.0));
         vegetables.add(new Vegetable("Vegetable 3", 100, 3.0));
 
+        this.repository = new Vegetables();
         this.repository.setVegetables(vegetables);
+
+        XMLWorker.writer(repository);
     }
 
     @Override
