@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <section class="container">
+            <section class="row">
+                <section class="inner-row">
+                    <section class="products-list-container">
+                        <section class="products-list">
+                            <article class="items-col">
+                                <section class="wrapper-item">
+                                    <section class="wrapper-item-inner">
+                                        <section class="product-image-container">
+                                            <a class="product-image-link" asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id" title="@product.Name">
+                                                <img class="product-image front" src="https://www.purina.bg/sites/g/files/mcldtz1386/files/2018-02/australian_shepherd_400x378_2.jpg" alt="@product.Name">
+                                                <img class="product-image back" src="https://www.lapichki.com/pets/dog/Porodi/26/03.jpg" alt="@product.Name">
+                                                <section class="image-overlay"></section>
+                                            </a>
+                                        </section>
+                                    </section>
+                                    <section class="product-info">
+                                        <section>
+                                            <h6 class="product-name">
+                                                <a title="@product.Name">
+                                                    <span>Австралийска овчарка</span>
+                                                </a>
+                                            </h6>
+                                        </section>
+                                    </section>
+                                </section>
+                            </article>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </div>
+</body>
+</html>
