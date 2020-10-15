@@ -1,0 +1,94 @@
+.home-container {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(https://images.unsplash.com/photo-1508813057990-e20f108f30ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80) no-repeat center center;
+    background-size: cover;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6rem 0 11rem 6.2rem;
+    position: relative;
+    top: 7rem; left: 0;
+    letter-spacing: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+    .info-container {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 512px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    p {
+        margin-top: 2rem;
+    }
+}
+
+.header-info-container {
+    padding-top: 4rem;
+}
+
+
+.home-button {
+    display: flex;
+    margin: 0.5rem 0 12rem 0;
+}
+
+.button {
+    padding: .5em .67em;
+    color: white;
+    text-decoration: none;
+    border: .1em solid white;
+}
+
+.button-primary {
+    color: black;
+    background-color: white;
+}
+
+
+article {
+    max-width: 36em;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.partners {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: auto; left: 0;
+    border: none;
+}
+
+.list-partners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.list-item {
+    list-style: none;
+}
+
+.list-item img {
+    width: 100px;
+    margin: 20px auto;
+    filter: grayscale(100%);
+}
