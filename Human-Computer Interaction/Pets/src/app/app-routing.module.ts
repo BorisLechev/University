@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
+import { ListOfPetSpeciesComponent } from './components/list-of-pet-species/list-of-pet-species.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'pets', component: ListOfPetSpeciesComponent },
   { path: '**', redirectTo: 'home' },
 ];
 

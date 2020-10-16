@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { ScrollDirective } from './components/shared/navigation/scroll-directive/scroll.directive';
 import { TeamComponent } from './components/shared/team/team.component';
+import { ListOfPetSpeciesComponent } from './components/list-of-pet-species/list-of-pet-species.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TeamComponent } from './components/shared/team/team.component';
     HomeComponent,
     NavigationComponent,
     ScrollDirective,
-    TeamComponent
+    TeamComponent,
+    ListOfPetSpeciesComponent
   ],
   imports: [
     BrowserModule,
