@@ -81,6 +81,42 @@
     filter: grayscale(100%);
 }
 
+.header-arrow {
+    position: relative;
+
+    #scrollDownArrow {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        top: -100px;
+        text-align: center;
+        animation: 0.7s down infinite alternate;
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+        }
+
+        @keyframes down {
+            0% {
+              transform: translateY(0px);
+            }
+            100% {
+              transform: translateY(20px);
+            }
+        }
+        @-webkit-keyframes down {
+            0% {
+              -webkit-transform: translateY(0px);
+            }
+            100% {
+              -webkit-transform: translateY(20px);
+            }
+        }
+    }
+}
+
 // About us
 @media screen and (max-width: 600px) {
     .about-us-picture {
