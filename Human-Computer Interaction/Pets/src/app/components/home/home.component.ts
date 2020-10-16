@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
       let target = $($(this).attr("href"));
 
       if (target.length){
-        $("html,body").animate({scrollTop:target.offset().top}, 600);
+        $("html,body").animate({ scrollTop:target.offset().top }, 1000);
       }
     });
     // let linkTag = document.getElementById("scrollDownArrow");
@@ -30,5 +30,11 @@ export class HomeComponent implements OnInit {
     //     document.querySelectorAll("html, body")[0].animate({ scrollTop: destinationOffsetTop });
     //   // }
     // });
+
+    $("#back-to-top-arrow").click(function (event) {
+      event.preventDefault();
+
+      $("html,body").animate({ scrollTop:0 }, 1000);
+    });
   }
 }
