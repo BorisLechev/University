@@ -10,6 +10,8 @@ import { TeamComponent } from './components/shared/team/team.component';
 import { ListOfPetSpeciesComponent } from './components/list-of-pet-species/list-of-pet-species.component';
 import { BackToTopDirective } from './components/home/back-to-top-directive/back-to-top.directive';
 import { PetDetailsComponent } from './components/pets/pet-details/pet-details.component';
+import { PetsSectionComponent } from './components/pets/pets-section/pets-section.component';
+import { PetCardComponent } from './components/pets/pet-card/pet-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PetDetailsComponent } from './components/pets/pet-details/pet-details.c
     TeamComponent,
     ListOfPetSpeciesComponent,
     BackToTopDirective,
-    PetDetailsComponent
+    PetDetailsComponent,
+    PetsSectionComponent,
+    PetCardComponent
   ],
   imports: [
     BrowserModule,

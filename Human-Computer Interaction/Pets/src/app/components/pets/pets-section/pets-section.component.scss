@@ -1,0 +1,67 @@
+ul > li {
+    list-style: none;
+}
+
+.main {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    background: rgb(255, 255, 255);
+
+    .container {
+        display: block;
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+
+            .inner-row {
+                left: 25%;
+                width: 75%;
+                margin: 2.5rem auto;
+
+                .products-list {
+                    margin: 0 -15px 15px -15px;
+                    padding: 0;
+
+                    .items-col:nth-child(3n+1) {
+                        clear: both;
+                    }
+                    
+                    .items-col {
+                        width: 33.33333%;
+                        position: relative;
+                        float: left; // za da sa po 3 na red
+
+                        @media screen and (max-width: 1000px) {
+                            width: 50%;
+                        }
+
+                        @media screen and (max-width: 600px) {
+                            width: 100%;
+
+                            .inner-row {
+                                width: 90%;
+                            }
+                        }
+                    }
+    
+                    @media screen and (max-width: 1000px) {
+                        .items-col:nth-child(2n+1) {
+                            clear: both;
+                        }
+                        .items-col:nth-child(3n+1) {
+                            clear: none;
+                        }
+                    } 
+                }
+
+                @media screen and (max-width: 600px) {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

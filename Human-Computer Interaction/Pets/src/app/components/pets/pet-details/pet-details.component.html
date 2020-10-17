@@ -7,39 +7,39 @@
                         <section class="inner-image-wrapper">
                             <section class="image-container">
                                 <article>
-                                    <img class="product-image" src="https://www.purina.bg/sites/g/files/mcldtz1386/files/2018-02/australian_shepherd_400x378_2.jpg" />
+                                    <img class="product-image" src="{{ pet.imageSrc }}" />
                                 </article>
                             </section>
                         </section>
                     </article>
                     <article class="details-wrapper">
                         <header class="details-header-container">
-                            <h3 class="product-title">Австралийска овчарка</h3>
+                            <h3 class="product-title">{{ pet.breed }}</h3>
                         </header>
                         <main class="details-main-container">
                             <dl class="characteristics-section">
                                 <dt>
-                                    <h6 class="section-title">Държава</h6>
+                                    <h6 class="section-title">Пазач</h6>
                                 </dt>
-                                <dd class="characteristic"><p>САЩ</p></dd>
+                                <dd class="characteristic"><p>{{ pet.guard.charAt(0).toLowerCase() + pet.guard.slice(1) }}</p></dd>
                             </dl>
                             <dl class="characteristics-section">
                                 <dt>
                                     <h6 class="section-title">Група</h6>
                                 </dt>
-                                <dd class="characteristic"><p>пастирско</p></dd>
+                                <dd class="characteristic"><p>{{ pet.group }}</p></dd>
                             </dl>
                             <dl class="characteristics-section">
                                 <dt>
                                     <h6 class="section-title">Средна продължителност на живота</h6>
                                 </dt>
-                                <dd class="characteristic"><p>12 - 15 години</p></dd>
+                                <dd class="characteristic"><p>{{ pet.averageLifeExpectancy }}</p></dd>
                             </dl>
                             <dl class="characteristics-section">
                                 <dt>
                                     <h6 class="section-title">Козина</h6>
                                 </dt>
-                                <dd class="characteristic"><p>средна/дълга</p></dd>
+                                <dd class="characteristic"><p>{{ pet.petCoat }}</p></dd>
                             </dl>
                             <dl class="characteristics-section">
                                 <dt>
@@ -47,9 +47,9 @@
                                 </dt>
                                 <dd class="characteristic">
                                     <ul>
-                                        <li class="list-item">Изискват пространство навън</li>
-                                        <li class="list-item">Чудесно спортно куче</li>
-                                        <li class="list-item">Чудесно семейно куче</li>
+                                        <li class="list-item">{{ pet.fact1 }}</li>
+                                        <li class="list-item">{{ pet.fact2 }}</li>
+                                        <li class="list-item">{{ pet.fact3 }}</li>
                                     </ul>
                                     <!-- <span><img class="characteristic-img" src="../../../../assets/pictures/tree-solid.svg" alt="tree-icon">Изискват пространство навън.</span> -->
                                 </dd>
@@ -70,9 +70,7 @@
                 <h5 class="description-title">Описание</h5>
             </header>
             <main>
-                <p>Точният произход на австралийската овчарка не е ясен. Началото на нейната история започва в САЩ, а не в Австралия, както предполага името ѝ. Произходът на името ѝ всъщност се свързва с преселили се в Щатите австралийски овчари, които я отглеждали.
-                    Австралийската овчарка има здраво, мускулесто и пропорционално тяло. Височината на тялото варира от 45 до 58 см, а теглото от 20 до 33 кг. Главата е също с правилни пропорции и има ясно изразен стоп. Очите са със средни размери и бадемовидна форма, а цветът им може да бъде син, кафяв или амбър. Ушите са поставени високо и имат триъгълна форма, като са леко заоблени на върха. Опашката е много къса. Козината е къса около главата, ушите и на предните крайници, а по гърба и задните крайници е по-дълга. Тя водоустойчива, може да бъде права или на вълни. Окраската се среща в мерле, червено мерле, червено, синьo или черно, с бели или жълтокафеви петна.
-                    Австралийската овчарка е игриво, лоялно и социално куче. Това е много интелигентно куче, което лесно се поддава на обучение. Разбира се отлично с децата и с другите животни от домакинството. Не е подходяща порода за отглеждане в апартамент, тъй като може да стане апатична, нервна и да се развият лошите черти от характера ѝ. Трябва всекидневно да ѝ се осигуряват игри, разходки и упражнения. Представителите на породата са много добри в аджилити. Продължителността на живота на австралийската овчарка е около 15 години. Предразположена е към катаракта, дисплазия на колянната става, хипотиреодизъм, глухота, слепота, епилепсия и поради много късата опашка към проблеми с гръбначния стълб. Поддръжката на козината е елементарна - достатъчно е сресване от време на време.</p>
+                <p>{{ pet.description }}</p>
             </main>
         </section>
     </section>
