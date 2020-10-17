@@ -19,15 +19,19 @@
                         <main class="details-main-container">
                             <dl class="characteristics-section">
                                 <dt>
-                                    <h6 class="section-title">Пазач</h6>
+                                    <h6 class="section-title" *ngIf="pet.type === 'dog'">Пазач</h6>
+                                    <h6 class="section-title" *ngIf="pet.type === 'cat'">Държава</h6>
                                 </dt>
-                                <dd class="characteristic"><p>{{ pet.guard.charAt(0).toLowerCase() + pet.guard.slice(1) }}</p></dd>
+                                <dd class="characteristic" *ngIf="pet.type === 'dog'"><p>{{ pet.guard.charAt(0).toLowerCase() + pet.guard.slice(1) }}</p></dd>
+                                <dd class="characteristic" *ngIf="pet.type === 'cat'"><p>{{ pet.country }}</p></dd>
                             </dl>
                             <dl class="characteristics-section">
                                 <dt>
-                                    <h6 class="section-title">Група</h6>
+                                    <h6 class="section-title" *ngIf="pet.type === 'dog'">Група</h6>
+                                    <h6 class="section-title" *ngIf="pet.type === 'cat'">Размер</h6>
                                 </dt>
-                                <dd class="characteristic"><p>{{ pet.group }}</p></dd>
+                                <dd class="characteristic" *ngIf="pet.type === 'dog'"><p>{{ pet.group }}</p></dd>
+                                <dd class="characteristic" *ngIf="pet.type === 'cat'"><p>{{ pet.size }}</p></dd>
                             </dl>
                             <dl class="characteristics-section">
                                 <dt>

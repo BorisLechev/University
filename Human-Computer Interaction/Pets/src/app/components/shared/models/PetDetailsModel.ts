@@ -10,4 +10,9 @@ export interface PetDetailsModel {
     fact2: string;
     fact3: string;
     description: string;
+
+    //cats
+    country: string;
+    size: string;
+    type: string;
 }

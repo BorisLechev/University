@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'species', component: ListOfPetSpeciesComponent },
-  { path: 'pets', component: PetsSectionComponent},
+  { path: 'pets/:type', component: PetsSectionComponent},
   { path: 'pet/:id', component: PetDetailsComponent },
   { path: '**', redirectTo: 'home' },
 ];
