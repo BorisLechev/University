@@ -9,6 +9,7 @@ import { ScrollDirective } from './components/shared/navigation/scroll-directive
 import { TeamComponent } from './components/shared/team/team.component';
 import { ListOfPetSpeciesComponent } from './components/list-of-pet-species/list-of-pet-species.component';
 import { BackToTopDirective } from './components/home/back-to-top-directive/back-to-top.directive';
+import { PetDetailsComponent } from './components/pets/pet-details/pet-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BackToTopDirective } from './components/home/back-to-top-directive/back
     ScrollDirective,
     TeamComponent,
     ListOfPetSpeciesComponent,
-    BackToTopDirective
+    BackToTopDirective,
+    PetDetailsComponent
   ],
   imports: [
     BrowserModule,
