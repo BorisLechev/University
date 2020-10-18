@@ -12,6 +12,8 @@ import { BackToTopDirective } from './components/home/back-to-top-directive/back
 import { PetDetailsComponent } from './components/pets/pet-details/pet-details.component';
 import { PetsSectionComponent } from './components/pets/pets-section/pets-section.component';
 import { PetCardComponent } from './components/pets/pet-card/pet-card.component';
+import { ArticlesSectionComponent } from './components/articles/articles-section/articles-section.component';
+import { ArticleComponent } from './components/articles/article/article.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PetCardComponent } from './components/pets/pet-card/pet-card.component'
     BackToTopDirective,
     PetDetailsComponent,
     PetsSectionComponent,
-    PetCardComponent
+    PetCardComponent,
+    ArticlesSectionComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

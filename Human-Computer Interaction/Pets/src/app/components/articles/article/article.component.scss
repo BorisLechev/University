@@ -1,65 +1,44 @@
-@import url(//fonts.googleapis.com/css?family=Abril+Fatface|Droid+Serif:400,700,400italic,700italic);
-
-*, *:before, *:after {
-    padding: 0;
-    margin: 0;
-    outline: 0;
-    box-sizing: border-box;
-}
-
 .cards {
     display: inline-block;
     width: 100%;
     height: auto;
+    /* position: relative; */
+    /* padding-top: 32rem;
+    margin-top: 4rem; */
     overflow: hidden;
 }
 
 .blog-card {
     max-width: 1050px;
     width: 100%;
-    height: 500px;
+    height: 400px;
+    // position: absolute;
     position: relative;
-    font-family: 'Droid Serif', serif;
-    color: #fff;
-    top: 0;
-    right: 0;
-    left: 0;
-    /* margin: 0 auto; */
-    margin: 5rem auto;
+    color: rgb(255, 255, 255);
+    top: 20%; right: 0; left: 0;
+    margin: 3rem auto;
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
     text-align: center;
     transition: all 0.4s;
-    background: url(https://images.unsplash.com/photo-1577911633055-d384622cea82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=761&q=80) no-repeat center;
-    background-size: cover  ;
+    background: url("https://images.unsplash.com/photo-1577911633055-d384622cea82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=761&q=80") no-repeat center;
+    background-size: cover;
 }
 
 .blog-card a {
     color: #fff;
-    text-decoration: none;
     transition: all 0.2s
 }
 
 .blog-card .color-overlay {
-    background: rgba(64, 84, 94, 0.5);
-    width: 1050px;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
     height: 500px;
     position: absolute;
     z-index: 10;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
-}
-
-.blog-card .gradient-overlay {
-    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 21%);
-    width: 1050px;
-    height: 500px;
-    position: absolute;
-    top: 350px;
-    left: 0;
-    z-index: 15;
 }
 
 .blog-card:hover {
@@ -68,7 +47,7 @@
 
 .blog-card:hover .card-info {
     opacity: 1;
-    bottom: 100px;
+    bottom: 20%;
 }
 
 .blog-card:hover .color-overlay {
@@ -76,58 +55,55 @@
 }
 
 .blog-card:hover .title-content {
-    margin-top: 70px
+    margin-top: 4rem;
 }
 
 .title-content {
     text-align: center;
-    margin: 170px 0 0 0;
+    margin: 10.5rem 0 0 0;
     position: absolute;
     z-index: 20;
     width: 100%;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     transition: all 0.6s;
 }
 
 /* promenya dalgina na chertata pod zaglavieto */
-.blog-card:hover h3:after {
+.blog-card:hover .title:after {
     transition: all 0.6s;
     width: 80%
 }
 
-.blog-card h3,
-h1 {
+.blog-card .title {
     display: inline-block;
-    font-family: 'Abril Fatface', serif;
-    font-size: 1.9em;
+    font-size: 1.9rem;
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 0;
 }
 
-.blog-card h3 a {
+.blog-card .title a {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.2s
+    transition: all 0.2s;
 }
 
-.blog-card h3 a:hover {
+.blog-card .title a:hover {
     text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.95);
 }
 
 /* nachalna dalgina na chertata pod zaglavieto */
-h3:after {
+.title:after {
     display: block;
-    content: " ";
+    content: "";
     width: 10%;
     height: 2px;
     margin: 20px auto;
     border: 0;
     background: rgb(189, 162, 107);
-    transition: all 0.2s
+    transition: all 0.2s;
 }
 
-.intro {
+.type {
     width: 170px;
     margin: 0 auto;
     color: rgb(221, 221, 221);
@@ -136,13 +112,8 @@ h3:after {
     text-transform: capitalize;
 }
 
-.intro a {
-    color: rgb(221, 221, 221)
-}
-
-.intro a:hover,
-.utility-info a:hover {
-    text-decoration: underline
+.type a {
+    color: rgb(221, 221, 221);
 }
 
 .card-info {
@@ -161,13 +132,13 @@ h3:after {
 /*  read article */
 .card-info a {
     display: block;
-    width: 120px;
+    width: 140px;
     margin: 15px auto;
     background: rgb(255, 255, 255);
     color: rgb(68, 68, 68);
     padding: 3px 10px;
     border-radius: 2px;
-    font-size: 0.8em
+    font-size: 0.8rem;
 }
 
 .card-info a:hover {
@@ -178,32 +149,36 @@ h3:after {
 /* da se promeni cveta na ">" v read article */
 .card-info a:hover span {
     filter: brightness(10);
-    opacity: 1
+    opacity: 1;
 }
 
-.utility-info {
+.footer-container {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    left: 0; bottom: 0;
     z-index: 20;
     width: 100%;
-    text-align: left
+    text-align: left;
 }
 
-.utility-list {
+.footer-list {
+    width: 100%;
     list-style-type: none;
     margin: 0 0 10px 20px;
-    width: 100%;
+    padding: 0;
 }
 
-.utility-list li {
+.footer-list li {
     display: inline-block;
     margin: 0 5px 0 0;
     padding: 3px 0 1rem 0px;
-    font-size: 0.8em
+    font-size: 0.8rem;
+
+    &:not(:last-of-type) {
+        padding-right: 0.5rem;
+    }
 }
 
-.licon {
+.icon {
     display: inline-block;
     position: relative;
     width: 23px;
@@ -211,7 +186,7 @@ h3:after {
     vertical-align: middle;
 }
 
-.licon:before {
+.icon:before {
     display: inline-block;
     position: absolute;
     top: -3px;
@@ -227,7 +202,7 @@ h3:after {
 /* read article ">" kato ne e :hover da e cherno */
 .icon-black {
     filter: brightness(0);
-    opacity: 0.6
+    opacity: 0.6;
 }
 
 .icon-like:before {
@@ -242,46 +217,52 @@ h3:after {
     background-position: -94px -7px;
 }
 
+@media screen and (max-width: 1024px) {
+    .blog-card {
+        width: 80%;
+    }
+}
+
 @media (max-width:750px) {
-    .utility-info {
+    .footer-container {
         text-align: center;
     }
 
-    .utility-info ul {
+    .footer-container ul {
         width: 100%;
         margin: 0;
     }
 
-    .utility-info li {
+    .footer-container li {
         display: inline-block;
         width: 49%;
-        margin: 0
+        margin: 0;
     }
 }
 
-@media (max-width:500px) {
-    .utility-info li:last-of-type {
+@media (max-width: 500px) {
+    .footer-container li:last-of-type {
         width: 100%
     }
 
     .card-info {
-        display: none
+        display: none;
     }
 
     .blog-card:hover .title-content,
     .title-content {
-        margin-top: 40px
+        margin-top: 40px;
     }
 
     .blog-card {
-        height: 300px
+        height: 250px;
     }
 
-    .blog-card h3 {
-        font-size: 1.3em
+    .blog-card .title {
+        font-size: 1.3rem;
     }
 
-    .intro {
-        font-size: 0.8em
+    .type {
+        font-size: 0.8rem;
     }
 }

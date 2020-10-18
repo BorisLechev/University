@@ -1,0 +1,15 @@
+<div class="main">
+    <section class="container">
+        <section class="row">
+            <section class="inner-row">
+                <section class="products-list-container">
+                    <section class="products-list">
+                        <article *ngFor="let article of articles">
+                            <app-article [article]="article"></app-article>
+                        </article>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</div>

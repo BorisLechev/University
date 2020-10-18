@@ -1,0 +1,38 @@
+ul > li {
+    list-style: none;
+}
+
+.main {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    background: rgb(255, 255, 255);
+
+    .container {
+        display: block;
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+
+            .inner-row {
+                left: 25%;
+                width: 75%;
+                margin: 2.5rem auto;
+
+                .products-list {
+                    margin: 0 -15px 15px -15px;
+                    padding: 0;
+                    
+                    .items-col {
+                        width: 100%;
+                        max-width: 100%;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}
