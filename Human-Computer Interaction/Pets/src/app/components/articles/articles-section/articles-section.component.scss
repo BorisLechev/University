@@ -19,7 +19,7 @@ ul > li {
 
             .inner-row {
                 left: 25%;
-                width: 75%;
+                width: 80%;
                 margin: 2.5rem auto;
 
                 .products-list {
@@ -31,6 +31,17 @@ ul > li {
                         max-width: 100%;
                         position: relative;
                     }
+                }
+
+                .card-container {
+                    display: inline-block;
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                }
+
+                .card-container:not(:first-of-type) {
+                    margin-top: 3rem;
                 }
             }
         }

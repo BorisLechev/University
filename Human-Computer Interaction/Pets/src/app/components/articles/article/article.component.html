@@ -1,20 +1,18 @@
-<div class="cards">
-    <article class="blog-card">
-        <header class="title-content">
-            <h3 class="title"><a>{{ article.title }}</a></h3>
-            <section class="type"><a>статия</a></section>
-        </header>
-        <main class="card-info">
-            {{ article.content }}.... 
-            <a>Научи повече<span class="icon icon-arr icon-black"></span></a>
-        </main>
-        <footer class="footer-container">
-            <ul class="footer-list">
-            <li><span class="icon icon-like"></span><a>{{ article.likes }}</a></li>
-            <li><span class="icon icon-com"></span><a>{{ article.comments }}</a></li>
-            <li><span class="icon icon-dat"></span>{{ article.publishedOn }}</li>
-            </ul>
-        </footer>
-        <div class="color-overlay"></div>
-    </article>
-</div>
+<article class="blog-card">
+    <header class="title-content">
+        <h3 class="title"><a>{{ article.title }}</a></h3>
+        <section class="type"><a>статия</a></section>
+    </header>
+    <main class="card-info">
+        {{ article.content }}.... 
+        <a>Научи повече<span class="icon icon-arr icon-black"></span></a>
+    </main>
+    <footer class="footer-container">
+        <ul class="footer-list">
+        <li><span class="icon icon-like"></span><a>{{ article.likes }}</a></li>
+        <li><span class="icon icon-com"></span><a>{{ article.comments }}</a></li>
+        <li><span class="icon icon-dat"></span>{{ article.publishedOn }}</li>
+        </ul>
+    </footer>
+    <div class="color-overlay"></div>
+</article>

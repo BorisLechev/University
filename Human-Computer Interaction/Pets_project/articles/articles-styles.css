@@ -32,7 +32,6 @@
     text-align: center;
     transition: all 0.4s;
     background: url(https://images.unsplash.com/photo-1577911633055-d384622cea82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=761&q=80) no-repeat center;
-    background-size: cover  ;
 }
 
 .blog-card a {
