@@ -20,21 +20,5 @@ export class HomeComponent implements OnInit {
         $("html,body").animate({ scrollTop:target.offset().top }, 1000);
       }
     });
-    // let linkTag = document.getElementById("scrollDownArrow");
-    // linkTag.addEventListener("click", function (e) {
-    //   e.preventDefault();
-    //   let linkUrl = linkTag.getAttribute("href").replace("#", "");
-    //   let destinationOffsetTop = document.getElementById(linkUrl).offsetTop;
-
-    //   // if (linkUrl.length) {
-    //     document.querySelectorAll("html, body")[0].animate({ scrollTop: destinationOffsetTop });
-    //   // }
-    // });
-
-    $("#back-to-top-arrow").click(function (event) {
-      event.preventDefault();
-
-      $("html,body").animate({ scrollTop:0 }, 1000);
-    });
   }
 }
