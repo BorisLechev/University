@@ -15,6 +15,7 @@ import { ArticlesSectionComponent } from './components/articles/articles-section
 import { ArticleComponent } from './components/articles/article/article.component';
 import { BackToTheTopArrowComponent } from './components/shared/back-to-the-top-arrow/back-to-the-top-arrow.component';
 import { BackToTopDirective } from './components/shared/back-to-the-top-arrow/back-to-top-directive/back-to-top.directive';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BackToTopDirective } from './components/shared/back-to-the-top-arrow/ba
     PetCardComponent,
     ArticlesSectionComponent,
     ArticleComponent,
-    BackToTheTopArrowComponent
+    BackToTheTopArrowComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
