@@ -1,16 +1,16 @@
 <section class="wrapper-item">
     <section class="wrapper-item-inner">
-        <section class="product-image-container" routerLink="/pet/{{ pet.id }}">
-            <a class="product-image-link" title="{{ pet.breed }}">
-                <img class="product-image front" src="{{ pet.imageSrc }}" alt="{{ pet.breed }}">
-                <img class="product-image back" src="{{ pet.imageSrc }}" alt="{{ pet.breed }}">
+        <section class="image-container" routerLink="/pet/{{ pet.id }}">
+            <a class="image-link" title="{{ pet.breed }}">
+                <img class="pet-image front" src="{{ pet.imageSrc }}" alt="{{ pet.breed }}">
+                <img class="pet-image back" src="{{ pet.imageSrc }}" alt="{{ pet.breed }}">
                 <section class="image-overlay"></section>
             </a>
         </section>
     </section>
-    <section class="product-info">
+    <section class="pet-info">
         <header>
-            <h6 class="product-name">
+            <h6 class="pet-name">
                 <a title="{{ pet.breed }}">
                     <span>{{ pet.breed }}</span>
                 </a>

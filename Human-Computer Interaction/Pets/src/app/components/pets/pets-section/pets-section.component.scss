@@ -22,7 +22,7 @@ ul > li {
                 width: 75%;
                 margin: 2.5rem auto;
 
-                .products-list {
+                .list-container {
                     margin: 0 -15px 15px -15px;
                     padding: 0;
 
@@ -52,6 +52,7 @@ ul > li {
                         .items-col:nth-child(2n+1) {
                             clear: both;
                         }
+                        
                         .items-col:nth-child(3n+1) {
                             clear: none;
                         }

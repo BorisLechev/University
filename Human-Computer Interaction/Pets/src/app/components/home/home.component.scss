@@ -8,6 +8,10 @@
     background-position: 50% 40%;
 }
 
+.button-primary:hover {
+    opacity: 0.8;
+}
+
 .info-container {
     display: flex;
     flex-direction: column;
@@ -71,11 +75,11 @@
     overflow: hidden;
 }
 
-.list-item {
+.partner {
     list-style: none;
 }
 
-.list-item img {
+.partner img {
     width: 100px;
     margin: 20px auto;
     filter: grayscale(100%);

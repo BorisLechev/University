@@ -2,12 +2,10 @@
     <section class="container">
         <section class="row">
             <section class="inner-row">
-                <section class="products-list-container">
-                    <section class="products-list">
-                        <article class="items-col" *ngFor="let pet of pets">
-                            <app-pet-card [pet]="pet"></app-pet-card>
-                        </article>
-                    </section>
+                <section class="list-container">
+                    <article class="items-col" *ngFor="let pet of pets">
+                        <app-pet-card [pet]="pet"></app-pet-card>
+                    </article>
                 </section>
             </section>
         </section>

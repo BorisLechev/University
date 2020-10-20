@@ -9,6 +9,9 @@ export interface PetDetailsModel {
     fact1: string;
     fact2: string;
     fact3: string;
+    icon1: string;
+    icon2: string;
+    icon3: string;
     description: string;
 
     //cats

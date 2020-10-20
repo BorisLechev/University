@@ -99,6 +99,8 @@
 }
 
 .details-header-container .product-title {
+    font-weight: 600;
+    letter-spacing: 1px;
     margin: 0 0 20px;
 }
 
@@ -113,19 +115,34 @@
 }
 
 .characteristics-section dt {
-    width: 80%;
+    width: 100%;
     margin: 1.5rem auto 0.5rem auto;
     border-bottom: 1px dashed rgb(0, 0, 0);
 }
 
 .characteristic {
     display: inline-block;
+    width: 100%;
     text-align: center;
 
-    .list-item {
-        list-style: none;
-        text-align: left;
-        padding-bottom: 0.5rem;
+    ul {
+        padding-left: 0;
+
+        .list-item {
+            list-style: none;
+            text-align: left;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &-img {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: -0.5rem;
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
     }
 }
 

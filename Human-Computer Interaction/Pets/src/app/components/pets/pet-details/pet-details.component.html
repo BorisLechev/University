@@ -51,18 +51,11 @@
                                 </dt>
                                 <dd class="characteristic">
                                     <ul>
-                                        <li class="list-item">{{ pet.fact1 }}</li>
-                                        <li class="list-item">{{ pet.fact2 }}</li>
-                                        <li class="list-item">{{ pet.fact3 }}</li>
+                                        <li class="list-item" *ngIf="pet.fact1"><img class="characteristic-img" src="{{ pet.icon1 }}" alt="tree-icon"><span>{{ pet.fact1 }}</span></li>
+                                        <li class="list-item" *ngIf="pet.fact2"><img class="characteristic-img" src="{{ pet.icon2 }}" alt="tree-icon"><span>{{ pet.fact2 }}</span></li>
+                                        <li class="list-item" *ngIf="pet.fact3"><img class="characteristic-img" src="{{ pet.icon3 }}" alt="tree-icon"><span>{{ pet.fact3 }}</span></li>
                                     </ul>
-                                    <!-- <span><img class="characteristic-img" src="../../../../assets/pictures/tree-solid.svg" alt="tree-icon">Изискват пространство навън.</span> -->
                                 </dd>
-                                <!-- <dd class="characteristic">
-                                    <p><img class="characteristic-img" src="../../../../assets/pictures/futbol-solid.svg" alt="sport-icon">Чудесно спортно куче.</p>
-                                </dd>
-                                <dd class="characteristic">
-                                    <span><img class="characteristic-img" src="../../../../assets/pictures/home-solid.svg" alt="home-icon">Чудесно семейно куче</span>
-                                </dd> -->
                             </dl>
                         </main>
                     </article>
