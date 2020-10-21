@@ -1,0 +1,42 @@
+<header class="site-header" appScroll>
+  <section class="header-container">
+      <section class="header-block">
+          <section class="header-inner-block">
+              <section class="links-container">
+                  <nav class="menu navbar navbar-expand-lg">
+                      <a id="menu" class="menu-icon opener" (click)="openSidebar()">menu</a>
+                      <section id="menu-drop" class="menu-drop">
+                          <section class="menu-drop-holder">
+                              <a class="menu-icon closer" (click)="closeSidebar()">close</a>
+                              <section class="logo">
+                                  <a routerLink="/">
+                                      <picture>
+                                          <img src="https://res.cloudinary.com/pictures-storage/image/upload/v1588236442/product_images/xelpbxklgtxrjpyxw6he.png" class="sidebar-logo" alt="Fragrance One logo">
+                                      </picture>
+                                  </a>
+                              </section>
+                          </section>
+                          <ul class="list navbar-nav">
+                              <li class="list-item"><a routerLink="/">начална страница</a></li>
+                              <li class="list-item"><a routerLink="/species">животни</a></li>
+                              <li class="list-item"><a routerLink="/articles">статии</a></li>
+                              <li class="list-item"><a routerLink="/contacts">контакти</a></li>
+                          </ul>
+                      </section>
+                  </nav>
+              </section>
+              <section class="logo-container">
+                  <section class="logo-inner-container">
+                      <a routerLink="/">
+                          <picture>
+                              <img src="https://res.cloudinary.com/pictures-storage/image/upload/v1588236442/product_images/xelpbxklgtxrjpyxw6he.png" id="logo" alt="Fragrance One logo">
+                          </picture>
+                      </a>
+                  </section>
+              </section>
+              <section class="empty-container">
+              </section>
+          </section>
+      </section>
+  </section>
+</header>
