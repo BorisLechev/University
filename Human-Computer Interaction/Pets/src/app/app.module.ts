@@ -16,6 +16,8 @@ import { ArticleComponent } from './components/articles/article/article.componen
 import { BackToTheTopArrowComponent } from './components/shared/back-to-the-top-arrow/back-to-the-top-arrow.component';
 import { BackToTopDirective } from './components/shared/back-to-the-top-arrow/back-to-top-directive/back-to-top.directive';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { VeterinariansSectionComponent } from './components/veterinarians/veterinarians-section/veterinarians-section.component';
+import { VeterinarianCardComponent } from './components/veterinarians/veterinarian-card/veterinarian-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     ArticlesSectionComponent,
     ArticleComponent,
     BackToTheTopArrowComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    VeterinariansSectionComponent,
+    VeterinarianCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,112 @@
+ul > li {
+    list-style: none;
+}
+
+.main {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    background: rgb(255, 255, 255);
+
+    .container {
+        display: block;
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+
+            .inner-row {
+                left: 25%;
+                width: 90%;
+                margin: 2.5rem auto;
+
+                .list-container {
+                    margin: 0 -15px 15px -15px;
+                    padding: 0;
+                    
+                    .items-col {
+                        width: 50%;
+                        position: relative;
+                        float: left; // za da sa po 3 na red
+
+                    }
+                    @media screen and (max-width: 1024px) {
+                        .items-col {
+                            width: 100% !important;
+                        }
+
+                        .inner-row {
+                            width: 90%;
+                        }
+                    }
+    
+                    @media screen and (max-width: 1000px) {
+                        .items-col:nth-child(2n+1) {
+                            clear: both;
+                        }
+                        
+                        .items-col:nth-child(3n+1) {
+                            clear: none;
+                        }
+                    } 
+                }
+
+                @media screen and (max-width: 600px) {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+// banners
+.banners {
+    max-width: 1050px;
+    margin: 0 auto 2rem auto;
+}
+
+.banner {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-top: 15rem;
+    margin-top: 4rem;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.banner.sofia {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1519429753079-3b0f0a95dea8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80") no-repeat;
+    background-position: 60% 35%;
+}
+
+.banner.varna {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1589315256873-a4c3c4ddb722?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1062&q=80") no-repeat center;
+}
+
+.banner.plovdiv {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1414187976819-32a4deaae820?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80") no-repeat;
+    background-position: 60% 80%;
+}
+
+.banner-content {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    left: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+}
+
+.banner-title {
+    font-size: 40px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0;
+}
