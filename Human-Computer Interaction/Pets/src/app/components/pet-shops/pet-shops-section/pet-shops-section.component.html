@@ -1,0 +1,49 @@
+<div class="main">
+    <section class="container">
+        <section class="row">
+            <section class="inner-row">
+                <section class="list-container">
+                    <main class="banners">
+                        <a routerLink="/pets/dogs">
+                            <section class="banner sofia">
+                                <div class="banner-content">
+                                    <h1 class="banner-title">софия</h1>
+                                    <span></span>
+                                </div>
+                            </section>
+                        </a>
+                    </main>
+                    <article class="items-col" *ngFor="let petShop of petShops;">
+                        <app-pet-shop-card *ngIf="petShop.town.toLowerCase() === 'софия'" [petShop]="petShop"></app-pet-shop-card>
+                    </article>
+                    <main class="banners">
+                        <a routerLink="/pets/dogs">
+                            <section class="banner varna">
+                                <div class="banner-content">
+                                    <h1 class="banner-title">варна</h1>
+                                    <span></span>
+                                </div>
+                            </section>
+                        </a>
+                    </main>
+                    <article class="items-col" *ngFor="let petShop of petShops;">
+                        <app-pet-shop-card *ngIf="petShop.town.toLowerCase() === 'варна'" [petShop]="petShop"></app-pet-shop-card>
+                    </article>
+                    <main class="banners">
+                        <a routerLink="/pets/dogs">
+                            <section class="banner plovdiv">
+                                <div class="banner-content">
+                                    <h1 class="banner-title">пловдив</h1>
+                                    <span></span>
+                                </div>
+                            </section>
+                        </a>
+                    </main>
+                    <article class="items-col" *ngFor="let petShop of petShops;">
+                        <app-pet-shop-card *ngIf="petShop.town.toLowerCase() === 'пловдив'" [petShop]="petShop"></app-pet-shop-card>
+                    </article>
+                </section>
+            </section>
+        </section>
+    </section>
+</div>

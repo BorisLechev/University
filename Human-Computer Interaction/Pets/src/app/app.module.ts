@@ -18,6 +18,8 @@ import { BackToTopDirective } from './components/shared/back-to-the-top-arrow/ba
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { VeterinariansSectionComponent } from './components/veterinarians/veterinarians-section/veterinarians-section.component';
 import { VeterinarianCardComponent } from './components/veterinarians/veterinarian-card/veterinarian-card.component';
+import { PetShopsSectionComponent } from './components/pet-shops/pet-shops-section/pet-shops-section.component';
+import { PetShopCardComponent } from './components/pet-shops/pet-shop-card/pet-shop-card.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { VeterinarianCardComponent } from './components/veterinarians/veterinari
     BackToTheTopArrowComponent,
     ErrorPageComponent,
     VeterinariansSectionComponent,
-    VeterinarianCardComponent
+    VeterinarianCardComponent,
+    PetShopsSectionComponent,
+    PetShopCardComponent
   ],
   imports: [
     BrowserModule,
