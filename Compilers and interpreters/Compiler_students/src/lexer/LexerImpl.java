@@ -57,9 +57,9 @@ public class LexerImpl extends Lexer<TokenType> {
                 //2 character operators
                 case '-' : return handleTwoCharOp('>', TokenType.MINUS, TokenType.ARROW);
                 case '=' : return handleTwoCharOp('=', TokenType.BECOMES, TokenType.EQUALS);
-                case '>' : return handleTwoCharOp('>', TokenType.GREATER, TokenType.GREATER_EQ);
-                case '<' : return handleTwoCharOp('<', TokenType.LESS, TokenType.LESS_EQ);
-                case '!' : return handleTwoCharOp('!', TokenType.NOT, TokenType.NOTEQUALS);
+                case '>' : return handleTwoCharOp('=', TokenType.GREATER, TokenType.GREATER_EQ);
+                case '<' : return handleTwoCharOp('=', TokenType.LESS, TokenType.LESS_EQ);
+                case '!' : return handleTwoCharOp('=', TokenType.NOT, TokenType.NOTEQUALS);
                 case '&' : return handleTwoCharOp('&', TokenType.OTHER, TokenType.AND);
                 case '|' : return handleTwoCharOp('|', TokenType.OTHER, TokenType.OR);
                 case '/' : return handleSlash();
@@ -206,22 +206,25 @@ public class LexerImpl extends Lexer<TokenType> {
     private boolean isLetter(char ch) {
         /* The current character is written in ch */
         /* If ch is a character between 'a' and 'z' or between 'A' and 'Z', return true */
-        return Character.isLetter(ch);
+        if(Character.isLetter(ch)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private boolean isDigit(char ch) {
-        /* If ch is a character between '0' and '9', return true */
         return Character.isDigit(ch);
     }
 
     public static void main(String[] args) throws IOException {
-        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("D:\\KI\\Boris_Lechev_17621337\\Compiler_students_IntelliJ\\Compiler_students\\resources\\keywords.txt"));
+        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\keywords.txt"));
         System.out.println(CompilerTestHelper.getTokensAsString(lexer));
 
-        Lexer<TokenType> lexer2 = new LexerImpl(new SourceImpl("D:\\KI\\Boris_Lechev_17621337\\Compiler_students_IntelliJ\\Compiler_students\\resources\\operators.txt"));
+        Lexer<TokenType> lexer2 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\operators.txt"));
         System.out.println(CompilerTestHelper.getTokensAsString(lexer2));
 
-        Lexer<TokenType> lexer3 = new LexerImpl(new SourceImpl("D:\\KI\\Boris_Lechev_17621337\\Compiler_students_IntelliJ\\Compiler_students\\resources\\Fib.txt"));
+        Lexer<TokenType> lexer3 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Fib.txt"));
         System.out.println(CompilerTestHelper.getTokensAsString(lexer3));
     }
 

@@ -313,7 +313,7 @@ public class ParserImpl extends Parser<TokenType, AST> {
             accept (currentToken.getTokenType()); /* ToDo handle symbol currentToken (currentToken.getTokenType()) */
 
             // TODO
-            /* ToDo handle symbol */
+            factor();/* ToDo handle symbol */
             ExpressionNode right = (ExpressionNode) currentNode;
             ExpressionNode multiplicativeOperator = null;
             switch (token.getTokenType()) {
@@ -514,7 +514,7 @@ public class ParserImpl extends Parser<TokenType, AST> {
     }
 
     public static void main(String[] args) throws IOException {
-        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("D:\\KI\\Boris_Lechev_17621337\\Compiler_students_IntelliJ\\Compiler_students\\resources\\Fib.txt"));
+        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Fib.txt"));
         Parser<TokenType, AST> parser = new ParserImpl(lexer);
         System.out.println(CompilerTestHelper.getASTasString(parser));
     }
