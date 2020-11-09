@@ -1,0 +1,25 @@
+img {
+    width: auto;
+    height: 1.5rem;
+}
+
+a, a:visited {
+    color: #252934;
+    transition: 200ms;
+    padding-left: 1rem;
+}
+
+.social {
+    text-align: right;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .social {
+        text-align: center;
+    }
+}

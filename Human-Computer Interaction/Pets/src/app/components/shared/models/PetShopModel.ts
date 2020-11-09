@@ -1,3 +1,5 @@
+import { Url } from 'url';
+
 export interface PetShopModel {
     name: string;
     address: string;

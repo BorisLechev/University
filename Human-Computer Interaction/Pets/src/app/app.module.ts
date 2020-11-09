@@ -20,12 +20,14 @@ import { PetDetailsComponent } from './components/pets/pet-details/pet-details.c
 import { PetsSectionComponent } from './components/pets/pets-section/pets-section.component';
 import { PetCardComponent } from './components/pets/pet-card/pet-card.component';
 import { ListOfPetSpeciesComponent } from './components/pets/list-of-pet-species/list-of-pet-species.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavigationComponent,
+    FooterComponent,
     ScrollDirective,
     TeamComponent,
     ListOfPetSpeciesComponent,
@@ -40,7 +42,7 @@ import { ListOfPetSpeciesComponent } from './components/pets/list-of-pet-species
     VeterinariansSectionComponent,
     VeterinarianCardComponent,
     PetShopsSectionComponent,
-    PetShopCardComponent
+    PetShopCardComponent,
   ],
   imports: [
     BrowserModule,
