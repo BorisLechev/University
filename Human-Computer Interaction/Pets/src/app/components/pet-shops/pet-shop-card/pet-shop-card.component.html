@@ -10,12 +10,12 @@
               <header>
                   <h2 class="subtitle">зоомагазин</h2>
                   <h2 class="title">{{ petShop.name }}</h2>
-                  <h2 class="address">{{petShop.town}} {{ petShop.address }}</h2>
+                  <h2 class="address">{{ petShop.town }} {{ petShop.address }}</h2>
                   <h2 class="phone">тел.: {{ petShop.phone }}</h2>
                   <h2 class="working-time">раб. време: {{ petShop.workingTime }}</h2>
               </header>
             </div>
-            <a href="https://zoomagazin.bg/" class="button" target="_blank">Разгледай</a>
+            <a href="{{ petShop.petUrl }}" class="button" target="_blank">Разгледай</a>
         </div>
     </div>
 </div>

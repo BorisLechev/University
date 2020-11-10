@@ -6,4 +6,5 @@ export interface PetShopModel {
     phone: string;
     workingTime: string;
     town: string;
+    petUrl: string;
 }
