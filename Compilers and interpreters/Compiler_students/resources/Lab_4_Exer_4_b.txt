@@ -1,0 +1,9 @@
+program {
+    proizv(int num1, int num2) -> void {
+        print(num1 * num2);
+    }
+
+    main() -> void {
+        @proizv(2, 5);
+    }
+}

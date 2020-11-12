@@ -56,12 +56,12 @@ public class LexerImpl extends Lexer<TokenType> {
 
                 //2 character operators
                 case '-' : return handleTwoCharOp('>', TokenType.MINUS, TokenType.ARROW);
-                case '=' : return handleTwoCharOp('=', TokenType.BECOMES, TokenType.EQUALS);
-                case '>' : return handleTwoCharOp('=', TokenType.GREATER, TokenType.GREATER_EQ);
-                case '<' : return handleTwoCharOp('=', TokenType.LESS, TokenType.LESS_EQ);
-                case '!' : return handleTwoCharOp('=', TokenType.NOT, TokenType.NOTEQUALS);
-                case '&' : return handleTwoCharOp('&', TokenType.OTHER, TokenType.AND);
-                case '|' : return handleTwoCharOp('|', TokenType.OTHER, TokenType.OR);
+                case '=' : return handleTwoCharOp('=', TokenType.BECOMES, TokenType.EQUALS); /* ToDo handle operators '=' (BECOMES) and '==' (EQUALS) */
+                case '>' : return handleTwoCharOp('=', TokenType.GREATER, TokenType.GREATER_EQ); /* ToDo handle operators '>' (GREATER) and '>=' (GREATER_EQ) */
+                case '<' : return handleTwoCharOp('=', TokenType.LESS, TokenType.LESS_EQ); /* ToDo handle operators '<' (LESS) and '<=' (LESS_EQ) */
+                case '!' : return handleTwoCharOp('=', TokenType.NOT, TokenType.NOTEQUALS); /* ToDo handle operators '!' (NOT) and '!=' (NOTEQUALS) */
+                case '&' : return handleTwoCharOp('&', TokenType.OTHER, TokenType.AND); /* ToDo handle operator '&&' (AND) or unknown symbol (OTHER)  */
+                case '|' : return handleTwoCharOp('|', TokenType.OTHER, TokenType.OR); /* ToDo handle operator '|' (OR) or unknown symbol (OTHER) */
                 case '/' : return handleSlash();
                 case '\'': return handleCharLiteral();
                 case '"' : return handleStringLiteral();
@@ -73,7 +73,7 @@ public class LexerImpl extends Lexer<TokenType> {
                 case '{' : return retTokenAndAdvance(TokenType.LBRACKET);
                 case '}' : return retTokenAndAdvance(TokenType.RBRACKET);
                 case '(' : return retTokenAndAdvance(TokenType.LPAREN);
-                case ')' : return retTokenAndAdvance(TokenType.LPAREN);
+                case ')' : return retTokenAndAdvance(TokenType.RPAREN);
                 case ';' : return retTokenAndAdvance(TokenType.SEMICOLON);
                 case '*' : return retTokenAndAdvance(TokenType.MUL);
                 case '%' : return retTokenAndAdvance(TokenType.MOD);
@@ -218,14 +218,17 @@ public class LexerImpl extends Lexer<TokenType> {
     }
 
     public static void main(String[] args) throws IOException {
-        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\keywords.txt"));
-        System.out.println(CompilerTestHelper.getTokensAsString(lexer));
+//        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\keywords.txt"));
+//        System.out.println(CompilerTestHelper.getTokensAsString(lexer));
+//
+//        Lexer<TokenType> lexer2 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\operators.txt"));
+//        System.out.println(CompilerTestHelper.getTokensAsString(lexer2));
+//
+//        Lexer<TokenType> lexer3 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Fib.txt"));
+//        System.out.println(CompilerTestHelper.getTokensAsString(lexer3));
 
-        Lexer<TokenType> lexer2 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\operators.txt"));
-        System.out.println(CompilerTestHelper.getTokensAsString(lexer2));
-
-        Lexer<TokenType> lexer3 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Fib.txt"));
-        System.out.println(CompilerTestHelper.getTokensAsString(lexer3));
+        Lexer<TokenType> lexer4 = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Lab_4_Exer_4_a.txt"));
+        System.out.println(CompilerTestHelper.getTokensAsString(lexer4));
     }
 
 }

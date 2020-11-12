@@ -305,7 +305,7 @@ public class ParserImpl extends Parser<TokenType, AST> {
     }
 
     void term() {
-        /* ToDo handle symbol */
+        factor(); /* ToDo handle symbol */
         ExpressionNode left = (ExpressionNode) currentNode;
         //MUL, DIV, MOD, AND
         while (TokenType.isOperatorGroupTwo(currentToken.getTokenType())) {
@@ -439,10 +439,10 @@ public class ParserImpl extends Parser<TokenType, AST> {
         Token token = currentToken;
         accept(TokenType.WHILE);/* ToDo handle symbol */
         accept(TokenType.LPAREN);/* ToDo handle symbol */
-        /* ToDo handle symbol */
+        expression();/* ToDo handle symbol */
         ExpressionNode expressionNode = (ExpressionNode) currentNode;
-        /* ToDo handle symbol */
-        /* ToDo handle symbol */
+        accept(TokenType.RPAREN);/* ToDo handle symbol */
+        block();/* ToDo handle symbol */
         BlockNode blockNode = (BlockNode) currentNode;
         currentNode = new WhileStatementNode(token, expressionNode, blockNode);
     }
@@ -514,10 +514,12 @@ public class ParserImpl extends Parser<TokenType, AST> {
     }
 
     public static void main(String[] args) throws IOException {
-        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Fib.txt"));
+//        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Fib.txt"));
+//        Parser<TokenType, AST> parser = new ParserImpl(lexer);
+//        System.out.println(CompilerTestHelper.getASTasString(parser));
+
+        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Lab_4_Exer-4_c.txt"));
         Parser<TokenType, AST> parser = new ParserImpl(lexer);
         System.out.println(CompilerTestHelper.getASTasString(parser));
     }
-
-
 }
