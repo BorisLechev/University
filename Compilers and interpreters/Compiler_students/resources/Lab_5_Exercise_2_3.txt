@@ -1,0 +1,9 @@
+program {
+    sum(int num1, int num2) -> void {
+        print(num1 + num2);
+    }
+
+    main() -> void {
+        @sum(2, 5);
+    }
+}

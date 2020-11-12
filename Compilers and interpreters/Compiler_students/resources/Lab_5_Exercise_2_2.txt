@@ -1,0 +1,13 @@
+program {
+    main() -> void {
+        int number = 0;
+        int iterations = 1;
+
+        while(iterations < 10) {
+            number = number + i;
+            iterations = iterations + 1;
+        }
+
+        print(number);
+    }
+}

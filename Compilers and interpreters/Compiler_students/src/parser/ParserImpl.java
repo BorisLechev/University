@@ -518,7 +518,7 @@ public class ParserImpl extends Parser<TokenType, AST> {
 //        Parser<TokenType, AST> parser = new ParserImpl(lexer);
 //        System.out.println(CompilerTestHelper.getASTasString(parser));
 
-        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Lab_4_Exer-4_c.txt"));
+        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\Lab_5_Exercise_2_2.txt"));
         Parser<TokenType, AST> parser = new ParserImpl(lexer);
         System.out.println(CompilerTestHelper.getASTasString(parser));
     }

@@ -1,0 +1,5 @@
+program {
+    main() -> void {
+        print("Hello, world!");
+    }
+}
