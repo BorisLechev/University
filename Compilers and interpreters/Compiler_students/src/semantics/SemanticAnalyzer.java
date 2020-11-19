@@ -50,11 +50,11 @@ import java.util.stream.Collectors;
 
 public class SemanticAnalyzer implements SemanticVisitor {
 
-    private Scope currentScope;
+    private Scope currentScope; // opisva scope-a
     private Map<VariableNode, Symbol> varSymbolMap;
 
     public SemanticAnalyzer() {
-        varSymbolMap = new HashMap<>();
+        varSymbolMap = new HashMap<>(); //sematichnata tablica na izhoda
     }
 
     @Override
@@ -63,13 +63,13 @@ public class SemanticAnalyzer implements SemanticVisitor {
     }
 
     @Override
-    public void visit(ProgramBodyNode node) {
+    public void visit(ProgramBodyNode node) { // definirat vidimostta na promenlivite v programite
         currentScope = new GlobalScope();
-        node.getChildNodes().forEach(n -> n.accept(this));
+        node.getChildNodes().forEach(n -> n.accept(this)); // dali v listata sa definirani validni promenlivi v program body
     }
 
     @Override
-    public void visit(FunctionDefinitionNode node) {
+    public void visit(FunctionDefinitionNode node) { // proverka na parametrite
         List<Type> paramsType = null;
         //Maybe not needed to convert formal parameters to Type
         if (node.getFormalParameters() != null) {
@@ -219,53 +219,73 @@ public class SemanticAnalyzer implements SemanticVisitor {
     }
 
     @Override
-    public void visit(NotNode node) {
+    public void visit(NotNode node) { // operatorat za otrecanie /unaren - samo edin operand, 1 dete-> zatova getOpoerand/
         node.getOperand().accept(this);
-        SemanticUtils.handleUnaryOperators(node, ExpressionType.BOOLEAN.ordinal());
+        SemanticUtils.handleUnaryOperators(node, ExpressionType.BOOLEAN.ordinal()); //moge da uchastva samo boolean
         node.setType(ExpressionType.BOOLEAN.ordinal());
     }
 
     @Override
-    public void visit(MinusNode node) {
+    public void visit(MinusNode node) { // minus unaren -> 1 vazel -> getOperand
         /* ToDo */
-
+        node.getOperand().accept(this);
+        SemanticUtils.handleUnaryOperators(node, ExpressionType.INT.ordinal());
+        node.setType(ExpressionType.INT.ordinal());
     }
 
     @Override
-    public void visit(AdditionNode node) {
-        node.getChildNodes().forEach(n -> n.accept(this));
-        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal());
-        node.setType(ExpressionType.INT.ordinal());
+    public void visit(AdditionNode node) { // za sabirane na 2 chisla
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.INT.ordinal()); // sabirane 2 chisla vrashta int
     }
 
     @Override
     public void visit(SubtractionNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.INT.ordinal()); // sabirane 2 chisla vrashta int
     }
 
     @Override
     public void visit(MultiplicationNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.INT.ordinal()); // umnogava 2 chisla vrashta int
     }
 
     @Override
     public void visit(DivisionNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.INT.ordinal()); // deli 2 chisla vrashta int
     }
 
     @Override
-    public void visit(ModNode node) {
+    public void visit(ModNode node) { // modulno delenie - 2 celi chisla delim -> ostatak ot delenieto
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.INT.ordinal()); // sabirane 2 chisla vrashta int
     }
 
     @Override
     public void visit(AndNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.BOOLEAN.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.BOOLEAN.ordinal());
     }
 
     @Override
     public void visit(OrNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.BOOLEAN.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.BOOLEAN.ordinal()); // sabirane 2 chisla vrashta int
     }
 
     @Override
@@ -278,6 +298,9 @@ public class SemanticAnalyzer implements SemanticVisitor {
     @Override
     public void visit(NotEqualNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); //getchildNodes zashtoto sa poveche ot 1 deca
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal(), ExpressionType.BOOLEAN.ordinal()); // proveryavame binarni operat
+        node.setType(ExpressionType.BOOLEAN.ordinal());
     }
 
     @Override
@@ -290,16 +313,25 @@ public class SemanticAnalyzer implements SemanticVisitor {
     @Override
     public void visit(GreaterOrEqualNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this));
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal());
+        node.setType(ExpressionType.BOOLEAN.ordinal());
     }
 
     @Override
     public void visit(LessNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this));
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal());
+        node.setType(ExpressionType.BOOLEAN.ordinal());
     }
 
     @Override
     public void visit(LessOrEqualNode node) {
         /* ToDo */
+        node.getChildNodes().forEach(n -> n.accept(this)); // izvlichame decata i gi obhogdame
+        SemanticUtils.handleBinaryOperators(node, ExpressionType.INT.ordinal()); // proveryavame tipovete danni dali sa int
+        node.setType(ExpressionType.BOOLEAN.ordinal()); // wryshta boolean
     }
 
     @Override
@@ -310,6 +342,7 @@ public class SemanticAnalyzer implements SemanticVisitor {
     @Override
     public void visit(BooleanNode node) {
         /* ToDo */
+        node.setType(ExpressionType.BOOLEAN.ordinal());
     }
 
     @Override
@@ -370,15 +403,16 @@ public class SemanticAnalyzer implements SemanticVisitor {
     @Override
     public void visit(StringLiteralNode node) {
         /* ToDo */
-        node.setIsArray(true);
+        node.setType(ExpressionType.CHAR.ordinal());
+        node.setIsArray(true); // masiv ot char-ve
     }
 
     public static void main(String[] args) throws IOException {
-        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("resources/HelloWorld.txt"));
+        Lexer<TokenType> lexer = new LexerImpl(new SourceImpl("C:\\Users\\Boris\\Documents\\Github\\University\\Compilers and interpreters\\Compiler_students\\resources\\HelloWorld.txt")); // whoda
         Parser<TokenType, AST> parser = new ParserImpl(lexer);
-        ProgramBodyNode root = (ProgramBodyNode) parser.entryRule();
+        ProgramBodyNode root = (ProgramBodyNode) parser.entryRule(); // sitaktichnoto darvo
         SemanticVisitor semanticVisitor = new SemanticAnalyzer();
-        semanticVisitor.visit(root);
+        semanticVisitor.visit(root); // sematichniya analizator priema darvoto - dali prom sa v oblastta na widimost
         Map<VariableNode, Symbol> map = semanticVisitor.getVarSymbolMap();
     }
 }

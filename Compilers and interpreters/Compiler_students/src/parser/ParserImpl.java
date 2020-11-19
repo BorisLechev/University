@@ -417,7 +417,6 @@ public class ParserImpl extends Parser<TokenType, AST> {
         accept(TokenType.IF);/* ToDo handle symbol */
         accept(TokenType.LPAREN);/* ToDo handle symbol */
         expression(); /* ToDo handle symbol */
-        block();  //??
 
         ExpressionNode expressionNode = (ExpressionNode) currentNode;
         accept(TokenType.RPAREN);/* ToDo handle symbol */

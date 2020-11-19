@@ -3,14 +3,27 @@ program {
     //int a = (2 + 2) * 2;
     //print("a = ", a);
     int c = 0;
+
+    // greshka
+    //int c = 1;
+
     char[] a = "This is an array of characters";
     a[(2+1)*2] = 'A';
     if (c == 0) {
         a[0] = 'B';
+
+        //greshka
+        //int k = 55;
     }
     else {
         a[0] = 'A';
     }
+
+    // greshki
+    //print(k);
+    //int number = 'hello';
+
+
     //print(b);
     //print('A');
   }
